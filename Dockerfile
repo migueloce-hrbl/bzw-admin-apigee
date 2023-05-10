@@ -1,8 +1,17 @@
-FROM google/apigee-emulator:1.9.1
+# bundle the apigee proxy
+FROM joshkeegan/zip:3.17.3 AS build
+WORKDIR /apigee
+COPY src .
+RUN zip -r src.zip src
+RUN ls -lR
+
+## build local apigee emulator
+
+FROM google/apigee-emulator:1.9.1 AS base
 WORKDIR /opt/apigee
 
-# copy the apigee proxy bundel to image
-COPY src.zip .
+# copy the apigee proxy bundel to base
+COPY --from=build /apigee/src.zip .
 
 # create new entry sh.
 RUN sed '$d' emulator-entry.sh > emulator-entry-new.sh 

@@ -1,5 +1,5 @@
 <TargetEndpoint name="backend">
   <HTTPTargetConnection>
-    <URL>http://bzw_demo_ui/</URL>
+    <URL>http://ui-1/</URL>
   </HTTPTargetConnection>
 </TargetEndpoint>

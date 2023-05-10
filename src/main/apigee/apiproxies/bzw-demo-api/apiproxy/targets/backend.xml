@@ -1,5 +1,5 @@
 <TargetEndpoint name="backend">
   <HTTPTargetConnection>
-    <URL>http://bzw_demo_api:5000/api</URL>
+    <URL>http://api-1:5000/api</URL>
   </HTTPTargetConnection>
 </TargetEndpoint>
