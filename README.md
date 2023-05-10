@@ -9,7 +9,13 @@ You can use visual studio code for adding/updating proxies for your local develo
 - Enable docker compose
 - Git 
 - Read access to dev registry zcusdev02acr.azurecr.io
-- Visual Studio Code with Google Cloud Code extension (for additional proxy updates)
+- Visual Studio Code with Google Cloud Code extension (for additional proxy updates)  
+
+Note: By default the application uses the following ports for its containers. You can change them in the docker compose as needed.
+- 80: apigee gateway for application requests
+- 8080: apigee controll 
+- 8500: to expose the api
+- 8501: to expose the ui
 
 ## Steps  
 - Clone this repo and navigate to the repo folder
