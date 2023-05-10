@@ -1,0 +1,8 @@
+<ProxyEndpoint name="default">
+  <HTTPProxyConnection>
+    <BasePath>hnapi/bzw/demo</BasePath>
+  </HTTPProxyConnection>
+  <RouteRule name="backend">
+    <TargetEndpoint>backend</TargetEndpoint>
+  </RouteRule>
+</ProxyEndpoint>

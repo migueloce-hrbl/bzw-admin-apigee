@@ -1,0 +1,11 @@
+{
+  "proxies": [
+    {
+      "name": "bzw-demo-api"
+    },
+    {
+      "name": "bzw-demo-ui"
+    }
+  ],
+  "sharedflows": []
+}
