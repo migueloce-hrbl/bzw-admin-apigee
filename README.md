@@ -4,7 +4,7 @@
 Demo Apigee as a gateway for application development and testing.
 You can use visual studio code for adding/updating proxies for your local development/testing. 
 
-## Pre Requesites  
+## Pre Requisites  
 - Docker Desktop
 - Enable docker compose
 - Git 
@@ -12,13 +12,17 @@ You can use visual studio code for adding/updating proxies for your local develo
 - Visual Studio Code with Google Cloud Code extension (for additional proxy updates)
 
 ## Steps  
-- Clone this repo and navigate to the folder
+- Clone this repo and navigate to the repo folder
 - Login to dev registry - zcusdev02acr.azurecr.io, [^1]
 - Execute the following command to spin up the application
 ```
 docker compose up -d
 ```
-- Execute the following command to remove the application
+- Test app - navigate to http://localhost
+
+## Cleanup
+- Navigate to the repo folder
+- Execute the following command to cleanup resources after testing
 ```
 docker compose down
 ```
