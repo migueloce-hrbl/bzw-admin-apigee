@@ -1,9 +1,8 @@
 # bundle the apigee proxy
 FROM joshkeegan/zip:3.17.3 AS build
 WORKDIR /apigee
-COPY src .
+COPY src ./src
 RUN zip -r src.zip src
-RUN ls -lR
 
 ## build local apigee emulator
 
