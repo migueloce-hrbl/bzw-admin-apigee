@@ -3,18 +3,18 @@ services:
   api-1:
     image: zcusdev02acr.azurecr.io/bizworks/api-ref:1.0.0
     ports:
-      - "8500:5000"   # not required though
+      - "8500:5000"   # not required though, to check the api seperatly like http://localhost:8500/api/data/tracking/1
   ui-1:
     image: zcusdev02acr.azurecr.io/bizworks/ui-ref:1.0.0
     ports:
-      - "8501:80"    # not required though
+      - "8501:80"    # not required though, to check the ui seperatly like http://localhost:8501/
     depends_on:
-      - api
+      - api-1
   apigee:
     build: .
     ports:
       - "8080:8080" 
-      - "80:8998"
+      - "80:8998" #apigee port for application requests
     depends_on:
       - api-1
       - ui-1
