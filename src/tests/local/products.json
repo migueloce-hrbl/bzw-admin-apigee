@@ -17,10 +17,10 @@
     "quotaInterval": "1",
     "quotaTimeUnit": "minute",
     "name": "demo",
-    "displayName": "demo downline application",
+    "displayName": "bizworks-subscription-admin",
     "proxies": [
-      "bzw-demo-api",
-      "bzw-demo-ui"
+      "bzw-admin-api-avengers",
+      "bizworks-subsciption-admin-ui"
     ]
   }
 ]

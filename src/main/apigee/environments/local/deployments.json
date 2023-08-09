@@ -1,10 +1,10 @@
 {
   "proxies": [
     {
-      "name": "bzw-demo-api"
+      "name": "bzw-admin-api-avengers"
     },
     {
-      "name": "bzw-demo-ui"
+      "name": "bizworks-subsciption-admin-ui"
     }
   ],
   "sharedflows": []

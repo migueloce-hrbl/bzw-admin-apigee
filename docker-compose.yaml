@@ -1,20 +1,32 @@
 version: "3.9"
 services:
-  api-1:
-    image: zcusdev02acr.azurecr.io/bizworks/api-ref:1.0.0
+  database:
+    image: 'zcusdev02acr.azurecr.io/subscription_postgres'
+    container_name: subscriptionDb
+    environment:
+      POSTGRES_DB: bizworks
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      PGDATA: postgres
     ports:
-      - "8500:5000"   # not required though, to check the api seperatly like http://localhost:8500/api/data/tracking/1
-  ui-1:
-    image: zcusdev02acr.azurecr.io/bizworks/ui-ref:1.0.0
+      - "5432:5432"
+    restart: unless-stopped
+  api:
+    image: 'zcusdev02acr.azurecr.io/bizworks/bzw-admin-api-avengers:0.0.5'
     ports:
-      - "8501:80"    # not required though, to check the ui seperatly like http://localhost:8501/
+      - "5006:5006"   # not required though, to check the api seperatly like http://localhost:8500/api/data/tracking/1
+  ui:
+    image: 'zcusdev02acr.azurecr.io/hrblone/bizworks-subscription-admin-ui:0.1.1'
+    ports:
+      - "3010:3010"    # not required though, to check the ui seperatly like http://localhost:8501/
     depends_on:
-      - api-1
+      - api
+      - database
   apigee:
     build: .
     ports:
       - "8080:8080" 
       - "80:8998" #apigee port for application requests
     depends_on:
-      - api-1
-      - ui-1
+      - api
+      - ui
